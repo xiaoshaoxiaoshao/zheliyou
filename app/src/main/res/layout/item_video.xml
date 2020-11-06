@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_container"
+    android:layout_width="match_parent"
+    tools:context=".ui.Activity_video">
+
+
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <com.yqw.hotheart.HeartFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/likeview2"
+            app:degrees_interval_max="20"
+            app:degrees_interval_min="-20"
+            app:swipe_image="@drawable/ic_heart">
+                <edu.zjff.shzj.view.LikeView
+                    android:id="@+id/likeview"
+                    android:layout_width="match_parent"
+                    android:visibility="visible"
+                    android:layout_height="match_parent"/>
+        </com.yqw.hotheart.HeartFrameLayout>
+
+        <edu.zjff.shzj.view.ControllerView
+            android:id="@+id/controller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"/>
+
+        <ImageView
+            android:id="@+id/iv_play"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@mipmap/ic_play"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+</RelativeLayout>

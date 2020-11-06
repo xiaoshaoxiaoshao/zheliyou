@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF1F3"
+    >
+    <LinearLayout
+        android:background="#fff"
+        android:paddingTop="@dimen/dp30"
+        android:paddingLeft="@dimen/dp10"
+        android:paddingRight="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="@dimen/dp50">
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp50"
+                android:layout_centerVertical="true"
+                android:background="@drawable/drawable_back"
+                android:scaleY="0.9" />
+            <TextView
+                android:id="@+id/submit_insertarticle"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shape_round_insert"
+                android:layout_marginRight="10dp"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:text="发布"
+
+                ></TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_height="wrap_content">
+            <EditText
+                android:textSize="30dp"
+                android:layout_marginTop="@dimen/dp25"
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="填写标题"
+                android:singleLine="true"
+                android:gravity="start"
+                android:background="@drawable/shape_round"
+                android:lineHeight="@dimen/dp_40"
+                />
+            <ImageView
+                android:layout_marginTop="@dimen/dp10"
+                android:id="@+id/line"
+                android:layout_below="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/picture_send_button_default_bg"
+                />
+
+            <EditText
+                android:layout_margin="@dimen/dp10"
+                android:id="@+id/content"
+                android:layout_below="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp100"
+                android:gravity="start"
+                android:hint="内容"
+                android:background="@null"
+                android:lineHeight="@dimen/dp25"
+                android:maxLines="5"
+                />
+
+            <ImageView
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_below="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/picture_send_button_default_bg"
+                />
+
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/dp10"
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:overScrollMode="never" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="@dimen/dp60">
+        <com.kongzue.stacklabelview.StackLabel xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/stackLabelView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:textColor="#e6000000"
+            app:itemMargin="4dp"
+            app:paddingHorizontal="12dp"
+            app:paddingVertical="8dp"
+            app:deleteButton="false"
+            app:textSize="12dp"
+            app:selectMode="true"
+            app:maxSelectNum="1"
+            app:labels=""
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/dp10"
+            />
+
+    </LinearLayout>
+</LinearLayout>

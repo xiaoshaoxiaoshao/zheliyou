@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_marginBottom="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:background="#fff"
+                android:id="@+id/main_frag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:paddingTop="12dp"
+            android:background="@drawable/shape_mainbg"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:id="@+id/iv_index"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/index"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_home_flash"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_index"
+                    android:text="首页"
+                    android:gravity="center"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#176E43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/iv_rank"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_rank"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_rank"
+                    android:text="排行榜"
+                    android:gravity="center"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#bfbfbf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/iv_camera"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_camera"
+                    />
+
+                <TextView
+                    android:text="分享"
+                    android:gravity="center"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#bfbfbf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/iv_video"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_video"
+                    />
+
+                <TextView
+                    android:text="视频"
+                    android:gravity="center"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#bfbfbf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/iv_my"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/my"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_my"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_my"
+                    android:text="我的"
+                    android:gravity="center"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#bfbfbf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,186 @@
+apply plugin: 'com.android.application'
+//Kotlin支持
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "edu.zjff.shzj"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 17
+        renderscriptSupportModeEnabled true
+
+        vectorDrawables.useSupportLibrary = true
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 在Android代码块中添加如下配置：（可优化最上图中transformClassDexBuilderForDebug的时间）
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/armeabi/libc++_shared.so'
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+            jni.srcDirs = []    //disable automatic ndk-build
+        }
+    }
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation 'androidx.appcompat:appcompat:1.1.0'
+        implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+        implementation 'com.google.android.material:material:1.1.0'
+        implementation 'androidx.navigation:navigation-fragment:2.3.0'
+        implementation 'androidx.navigation:navigation-ui:2.3.0'
+        implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+        //权限
+        implementation 'pub.devrel:easypermissions:3.0.0'
+
+        implementation 'com.google.code.gson:gson:2.8.6'
+        implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+        //黄油刀
+        implementation 'com.jakewharton:butterknife:10.2.1'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+        //沉侵式状态栏
+        api 'com.gyf.immersionbar:immersionbar:3.0.0'
+        //瀑布流
+        implementation 'com.android.support:recyclerview-v7:29.1.0'
+        implementation 'com.android.support:cardview-v7:29.1.0'
+        //上下拉刷新
+        implementation 'q.rorbin:QRefreshLayout:1.2.4'
+        //图片选择框架
+        implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.9'
+
+        //compile 'com.github.LuckSiege:PictureSelectorLight:v2.1.1'
+
+
+        //万能适配器     评论dialog
+        implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+
+        //圆角圆形图片控件 主要是可以带边框
+        implementation 'com.makeramen:roundedimageview:2.3.0'
+        //上下拉刷新   new
+        implementation 'com.github.bumptech.glide:glide:4.11.0'
+        annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+
+        implementation 'com.qiniu:qiniu-android-sdk:7.6.4'
+
+
+        implementation 'com.kongzue.dialog_v3:dialog:3.2.1'
+
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M1'
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.0"
+        implementation 'androidx.preference:preference:1.1.0'
+        implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
+        implementation 'androidx.core:core-ktx:1.1.0'
+        implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+        implementation 'com.github.florent37:runtime-permission-kotlin:1.1.0'
+        implementation 'com.google.android.material:material:1.0.0'
+        implementation 'androidx.fragment:fragment-ktx:1.1.0'
+        implementation 'com.yarolegovich:mp:1.0.9'
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
+        implementation 'com.timqi.sectorprogressview:library:2.0.1'
+        implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+        implementation 'com.tencent.bugly:crashreport:3.1.0'
+        implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
+
+        implementation project(':library')
+        androidTestImplementation 'androidx.test:rules:1.3.0-alpha02'
+
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+        //九宫格
+        compile 'com.lzy.widget:ninegridview:0.2.0'
+        //Toast工具
+        implementation 'com.bravin.btoast:BToast:1.0.1'
+        //轮播
+        compile 'com.youth.banner:banner:2.1.0'
+        //圖片选择
+        compile 'com.facebook.rebound:rebound:0.3.8'
+        //標籤选择
+        implementation 'com.kongzue.stacklabel:stacklabelview:1.1.9'
+        //fuckdouying
+        implementation 'com.airbnb.android:lottie:2.8.0'
+        //rx java
+        implementation 'io.reactivex:rxjava:1.1.0'
+
+
+        //缺德地图
+        implementation 'com.amap.api:location:latest.integration'
+        //缺德地图   天气
+        compile 'com.amap.api:search:latest.integration'
+        //compile 'com.amap.api:location:latest.integration'
+        //城市选择
+        implementation 'liji.library.dev:citypickerview:5.2.2'
+
+        //空祖占位框架
+        implementation 'com.kongzue.view:HolderView:1.0.0'
+
+        //沉浸式状态栏（statusbarutil）
+        implementation 'com.jaeger.statusbarutil:library:1.5.1'
+
+        //视频预加载
+        implementation 'com.github.dueeeke.dkplayer:dkplayer-java:3.2.6'
+
+        implementation 'com.github.dueeeke.dkplayer:dkplayer-ui:3.2.6'
+
+        implementation 'com.github.dueeeke.dkplayer:player-exo:3.2.6'
+
+        implementation 'com.github.dueeeke.dkplayer:player-ijk:3.2.6'
+
+        implementation 'com.github.dueeeke.dkplayer:videocache:3.2.6'
+        //水波纹
+        implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-andx'
+        //下拉刷新
+        implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'
+        implementation  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+        //搜索
+
+        implementation 'me.jessyan:autosize:1.2.1'
+        //鹅厂报错检测
+        compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+
+        //折叠文本
+        compile 'com.hymane.expandtextview:library:1.0.2'
+
+        //点击查看大图
+        implementation 'com.github.SherlockGougou:BigImageViewPager:androidx-6.0.2'
+
+    }
+}
+

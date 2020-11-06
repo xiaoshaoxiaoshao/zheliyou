@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="true"
+        android:id="@+id/Refresh"
+        app:srlEnableRefresh="false"
+        app:srlEnableLoadMore="false"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.czp.searchmlist.mSearchLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/msearchlayout"
+                app:search_hint=" 放假去哪玩？"
+                android:paddingLeft="@dimen/dp10"
+                app:search_baground="@drawable/shape_round"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:scrollbars="none"
+                android:id="@+id/rl_search"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="match_parent"/>
+            <com.kongzue.holderview.HolderView
+                android:id="@+id/holdView"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <com.scwang.smart.refresh.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</LinearLayout>

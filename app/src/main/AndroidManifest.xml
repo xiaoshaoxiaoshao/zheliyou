@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.zjff.shzj">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--七牛云-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <!--允许读取电话状态SIM的权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="浙里游"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        tools:replace="android:theme,android:label"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        android:windowSoftInputMode="stateVisible|adjustResize"
+        android:launchMode="singleTask"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.Activity_welcome" >
+            <!--@style/AppTheme.StartingWindowTheme-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.MainActivity" android:theme="@style/AppTheme.Deep"/>
+        <activity android:name=".ui.Activity_Content"  android:launchMode="singleTask"/>
+        <activity android:name=".ui.Activity_InsertNewArticle"/>
+        <activity android:name=".ui.Activity_video"/>
+        <activity android:name=".ui.Activity_img">
+        </activity>
+        <activity android:name=".ui.Activity_InsertNewVideo">
+        </activity>
+        <activity android:name=".ui.Activity_login_welcome">
+
+        </activity>
+
+        <activity android:name=".trinity.RecordActivity"/>
+        <activity android:name=".ui.activity_search"/>
+        <activity android:name=".trinity.EditorActivity"/>
+        <activity android:name=".trinity.VideoExportActivity"/>
+        <activity android:name=".ui.activity_setting"/>
+        <activity android:name=".trinity.MusicActivity"/>
+        <!--我的-->
+        <activity android:name="com.shzj.behavior.Demo1Activity" >
+
+        </activity>
+
+
+        <service android:name=".service.RegistService" />
+        <service android:name=".service.LoginService" />
+        <service android:name=".service.RequestYZMService" />
+        <service android:name=".service.GetArticleListService"></service>
+
+        <service android:name="com.amap.api.location.APSService"></service>
+
+
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="9987269437823746e038c76530381030">
+          <!--
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="a750539687486b728400772c1c4b6597">-->
+
+
+        </meta-data>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="410"/>
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="550"/>
+
+        <!-- 配置APP ID -->
+        <meta-data
+            android:name="BUGLY_APPID"
+            android:value="48ffd87900" />
+        <!-- 配置APP版本号 -->
+        <meta-data
+            android:name="BUGLY_APP_VERSION"
+            android:value="1.8" />
+        <!-- 配置APP渠道号 -->
+        <meta-data
+            android:name="BUGLY_APP_CHANNEL"
+            android:value="null" />
+        <!-- 配置Bugly调试模式（true或者false）-->
+        <meta-data
+            android:name="BUGLY_ENABLE_DEBUG"
+            android:value="true" />
+    </application>
+</manifest>

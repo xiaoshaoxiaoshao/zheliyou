@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2018 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+  <!-- Style to use for TabLayout in the theme. -->
+  <attr name="tabStyle" format="reference"/>
+
+  <declare-styleable name="TrinityTabLayout">
+    <!-- Color of the indicator used to show the currently selected tab. -->
+    <attr name="tabIndicatorColor" format="color"/>
+    <!-- {@deprecated Instead, set the intrinsic size of the custom drawable provided to the
+         tabIndicator attribute in order to change the indicator height. For example, this can be
+         done by setting the <size> property in a <shape> resource.} -->
+    <attr name="tabIndicatorHeight" format="dimension"/>
+    <!-- Position in the Y axis from the starting edge that tabs should be positioned from. -->
+    <attr name="tabContentStart" format="dimension"/>
+    <!-- Reference to a background to be applied to tabs. -->
+    <attr name="tabBackground" format="reference"/>
+    <!-- Reference to a drawable to use as selection indicator for tabs. If this attribute is not
+         specified, indicator defaults to a line along the bottom of the tab. -->
+    <attr name="tabIndicator" format="reference"/>
+    <!-- Gravity constant for tab selection indicator. -->
+    <attr name="trinityTabIndicatorGravity">
+      <!-- Align indicator to the bottom of this tab layout. -->
+      <enum name="bottom" value="0"/>
+      <!-- Align indicator along the center of this tab layout. -->
+      <enum name="center" value="1"/>
+      <!-- Align indicator to the top of this tab layout. -->
+      <enum name="top" value="2"/>
+      <!-- Stretch indicator to match the height and width of a tab item in this layout. -->
+      <enum name="stretch" value="3"/>
+    </attr>
+    <!-- Duration in milliseconds for the animation of the selection indicator from one tab item
+         to another. -->
+    <attr name="tabIndicatorAnimationDuration" format="integer"/>
+    <!-- Whether the selection indicator width should fill the full width of the tab item,
+         or if it should be fitted to the content of the tab text label. If no text label is
+         present, it will be set to the width of the icon or to a minimum width of 24dp. -->
+    <attr name="tabIndicatorFullWidth" format="boolean"/>
+    <!-- The behavior mode for the Tabs in this layout -->
+    <attr name="trinityTabMode">
+      <enum name="scrollable" value="0"/>
+      <enum name="fixed" value="1"/>
+      <enum name="auto" value="2"/>
+    </attr>
+    <!-- Gravity constant for tabs. -->
+    <attr name="trinityTabGravity">
+      <enum name="fill" value="0"/>
+      <enum name="center" value="1"/>
+    </attr>
+    <!-- Whether to display tab labels horizontally inline with icons, or underneath icons. -->
+    <attr name="tabInlineLabel" format="boolean"/>
+    <!-- The minimum width for tabs. -->
+    <attr name="tabMinWidth" format="dimension"/>
+    <!-- The maximum width for tabs. -->
+    <attr name="tabMaxWidth" format="dimension"/>
+    <!-- A reference to a TextAppearance style to be applied to tabs. -->
+    <attr name="tabTextAppearance" format="reference"/>
+    <!-- The default text color to be applied to tabs. -->
+    <attr name="tabTextColor" format="color"/>
+    <!-- {@deprecated Instead, provide a ColorStateList to the tabTextColor attribute with a
+         selected color set.}  -->
+    <attr name="tabSelectedTextColor" format="color"/>
+    <!-- The preferred padding along the start edge of tabs. -->
+    <attr name="tabPaddingStart" format="dimension"/>
+    <!-- The preferred padding along the top edge of tabs. -->
+    <attr name="tabPaddingTop" format="dimension"/>
+    <!-- The preferred padding along the end edge of tabs. -->
+    <attr name="tabPaddingEnd" format="dimension"/>
+    <!-- The preferred padding along the bottom edge of tabs. -->
+    <attr name="tabPaddingBottom" format="dimension"/>
+    <!-- The preferred padding along all edges of tabs. -->
+    <attr name="tabPadding" format="dimension"/>
+    <!-- Tint to apply to tab icons, if present. This can be a color state list or a color. -->
+    <attr name="tabIconTint" format="color"/>
+    <!-- Blending mode to apply to tab icons. -->
+    <attr name="trinityTabIconTintMode">
+      <enum name="src_over" value="3"/>
+      <enum name="src_in" value="5"/>
+      <enum name="src_atop" value="9"/>
+      <enum name="multiply" value="14"/>
+      <enum name="screen" value="15"/>
+      <enum name="add" value="16"/>
+    </attr>
+    <!-- Ripple color for the tabs. This may be a color state list, if the desired ripple color
+         should be stateful.-->
+    <attr name="tabRippleColor" format="color"/>
+    <!-- Whether to use unbounded ripple effect for tabs, or if ripple should instead be bound to
+         tab item bounds. -->
+    <attr name="tabUnboundedRipple" format="boolean"/>
+  </declare-styleable>
+
+  <declare-styleable name="TrinityTabItem">
+    <!-- Text to display in the tab. -->
+    <attr name="android:text"/>
+    <!-- Icon to display in the tab. -->
+    <attr name="android:icon"/>
+    <!-- A reference to a layout resource to be displayed in the tab. -->
+    <attr name="android:layout"/>
+  </declare-styleable>
+
+  <declare-styleable name="CircularImageView">
+    <attr name="android:src" />
+  </declare-styleable>
+
+  <declare-styleable name="CircleTextView">
+    <attr name="backgroundColor" format="color" />
+  </declare-styleable>
+
+  <declare-styleable name="ProgressView">
+    <attr name="pv_radius" format="dimension|reference" />
+    <attr name="pv_bg_color" format="color|reference" />
+    <attr name="pv_content_color" format="color|reference" />
+    <attr name="pv_divider_color" format="color|reference" />
+    <attr name="pv_divider_width" format="dimension|reference" />
+  </declare-styleable>
+
+  <declare-styleable name="EditOverlay_Layout">
+    <attr name="android:layout_gravity" />
+    <attr name="android:layout_width" />
+    <attr name="android:layout_height" />
+  </declare-styleable>
+
+  <declare-styleable name="AutoResizingTextView">
+    <attr name="strokeWidth" format="dimension" />
+    <attr name="strokeMiter" format="dimension" />
+    <attr name="strokeColor" format="color" />
+    <attr name="strokeJoinStyle">
+      <enum name="miter" value="0" />
+      <enum name="bevel" value="1" />
+      <enum name="round" value="2" />
+    </attr>
+  </declare-styleable>
+  <!--圆角或者圆形图片组件-->
+  <declare-styleable name="CircleImageView">
+    <attr name="civ_border_width" format="dimension" />
+    <attr name="civ_border_color" format="color" />
+    <attr name="civ_border_overlay" format="boolean" />
+    <attr name="civ_fill_color" format="color" />
+    <attr name="ease_border_color" format="color" />
+    <attr name="ease_border_width" format="dimension" />
+    <attr name="ease_press_alpha" format="integer" />
+    <attr name="ease_press_color" format="color" />
+    <attr name="ease_radius" format="dimension" />
+    <attr name="es_shape_type" format="enum">
+      <enum name="none" value="0" />
+      <enum name="round" value="1" />
+      <enum name="rectangle" value="2" />
+    </attr>
+  </declare-styleable>
+
+  <declare-styleable name="AutoLinkTextView">
+    <!-- 链接高亮颜色 -->
+    <attr name="highlight_textcolor" format="color" />
+    <!-- 默认文字颜色 -->
+    <attr name="default_textcolor" format="color" />
+  </declare-styleable>
+
+  //flycoTabLayout
+  <!-- indicator -->
+  <!-- 设置显示器颜色 -->
+  <attr name="tl_indicator_color" format="color"/>
+  <!-- 设置显示器高度 -->
+  <attr name="tl_indicator_height" format="dimension"/>
+  <!-- 设置显示器固定宽度 -->
+  <attr name="tl_indicator_width" format="dimension"/>
+  <!-- 设置显示器margin,当indicator_width大于0,无效 -->
+  <attr name="tl_indicator_margin_left" format="dimension"/>
+  <attr name="tl_indicator_margin_top" format="dimension"/>
+  <attr name="tl_indicator_margin_right" format="dimension"/>
+  <attr name="tl_indicator_margin_bottom" format="dimension"/>
+  <!-- 设置显示器圆角弧度-->
+  <attr name="tl_indicator_corner_radius" format="dimension"/>
+  <!-- 设置显示器上方还是下方,只对圆角矩形有用-->
+  <attr name="tl_indicator_gravity" format="enum">
+    <enum name="TOP" value="48"/>
+    <enum name="BOTTOM" value="80"/>
+  </attr>
+  <!-- 设置显示器为常规|三角形|背景色块|-->
+  <attr name="tl_indicator_style" format="enum">
+    <enum name="NORMAL" value="0"/>
+    <enum name="TRIANGLE" value="1"/>
+    <enum name="BLOCK" value="2"/>
+  </attr>
+  <!-- 设置显示器长度与title一样长,只有在STYLE_NORMAL并且indicatorWidth小于零有效-->
+  <attr name="tl_indicator_width_equal_title" format="boolean"/>
+  <!-- 设置显示器支持动画-->
+  <attr name="tl_indicator_anim_enable" format="boolean"/>
+  <!-- 设置显示器动画时间-->
+  <attr name="tl_indicator_anim_duration" format="integer"/>
+  <!-- 设置显示器支持动画回弹效果-->
+  <attr name="tl_indicator_bounce_enable" format="boolean"/>
+
+  <!-- underline -->
+  <!-- 设置下划线颜色 -->
+  <attr name="tl_underline_color" format="color"/>
+  <!-- 设置下划线高度 -->
+  <attr name="tl_underline_height" format="dimension"/>
+  <!-- 设置下划线上方还是下方-->
+  <attr name="tl_underline_gravity" format="enum">
+    <enum name="TOP" value="48"/>
+    <enum name="BOTTOM" value="80"/>
+  </attr>
+
+  <!-- divider -->
+  <!-- 设置分割线颜色 -->
+  <attr name="tl_divider_color" format="color"/>
+  <!-- 设置分割线宽度 -->
+  <attr name="tl_divider_width" format="dimension"/>
+  <!-- 设置分割线的paddingTop和paddingBottom -->
+  <attr name="tl_divider_padding" format="dimension"/>
+
+  <!-- tab -->
+  <!-- 设置tab的paddingLeft和paddingRight -->
+  <attr name="tl_tab_padding" format="dimension"/>
+  <!-- 设置tab大小等分 -->
+  <attr name="tl_tab_space_equal" format="boolean"/>
+  <!-- 设置tab固定大小 -->
+  <attr name="tl_tab_width" format="dimension"/>
+
+  <!-- title -->
+  <!-- 设置字体大小 -->
+  <attr name="tl_textsize" format="dimension"/>
+  <!-- 设置字体选中颜色 -->
+  <attr name="tl_textSelectColor" format="color"/>
+  <!-- 设置字体未选中颜色 -->
+  <attr name="tl_textUnselectColor" format="color"/>
+  <!-- 设置字体加粗 -->
+  <attr name="tl_textBold" format="boolean"/>
+  <!-- 设置字体全大写 -->
+  <attr name="tl_textAllCaps" format="boolean"/>
+
+  <!-- 设置字体大小 -->
+  <attr name="tl_subtextsize" format="dimension" />
+  <!-- 设置字体选中颜色 -->
+  <attr name="tl_subtextSelectColor" format="color" />
+  <!-- 设置字体未选中颜色 -->
+  <attr name="tl_subtextUnselectColor" format="color" />
+  <!-- 设置字体加粗 -->
+  <attr name="tl_subtextBold" format="boolean" />
+  <!-- 设置字体全大写 -->
+  <attr name="tl_subtextAllCaps" format="boolean" />
+
+
+  <declare-styleable name="SlidingTabLayout">
+    <!-- indicator -->
+    <attr name="tl_indicator_color"/>
+    <attr name="tl_indicator_height"/>
+    <attr name="tl_indicator_width"/>
+    <attr name="tl_indicator_margin_left"/>
+    <attr name="tl_indicator_margin_top"/>
+    <attr name="tl_indicator_margin_right"/>
+    <attr name="tl_indicator_margin_bottom"/>
+    <attr name="tl_indicator_corner_radius"/>
+    <attr name="tl_indicator_gravity"/>
+    <attr name="tl_indicator_style"/>
+    <attr name="tl_indicator_width_equal_title"/>
+
+    <!-- underline -->
+    <attr name="tl_underline_color"/>
+    <attr name="tl_underline_height"/>
+    <attr name="tl_underline_gravity"/>
+
+    <!-- divider -->
+    <attr name="tl_divider_color"/>
+    <attr name="tl_divider_width"/>
+    <attr name="tl_divider_padding"/>
+
+    <!-- tab -->
+    <attr name="tl_tab_padding"/>
+    <attr name="tl_tab_space_equal"/>
+    <attr name="tl_tab_width"/>
+
+    <!-- title -->
+    <attr name="tl_textsize"/>
+    <attr name="tl_textSelectColor"/>
+    <attr name="tl_textUnselectColor"/>
+    <attr name="tl_textBold"/>
+    <attr name="tl_textAllCaps"/>
+
+  </declare-styleable>
+
+  <declare-styleable name="CommonTabLayout">
+    <!-- indicator -->
+    <attr name="tl_indicator_color"/>
+    <attr name="tl_indicator_height"/>
+    <attr name="tl_indicator_width"/>
+    <attr name="tl_indicator_margin_left"/>
+    <attr name="tl_indicator_margin_top"/>
+    <attr name="tl_indicator_margin_right"/>
+    <attr name="tl_indicator_margin_bottom"/>
+    <attr name="tl_indicator_corner_radius"/>
+    <attr name="tl_indicator_gravity"/>
+    <attr name="tl_indicator_style"/>
+    <attr name="tl_indicator_anim_enable"/>
+    <attr name="tl_indicator_anim_duration"/>
+    <attr name="tl_indicator_bounce_enable"/>
+
+    <!-- underline -->
+    <attr name="tl_underline_color"/>
+    <attr name="tl_underline_height"/>
+    <attr name="tl_underline_gravity"/>
+
+    <!-- divider -->
+    <attr name="tl_divider_color"/>
+    <attr name="tl_divider_width"/>
+    <attr name="tl_divider_padding"/>
+
+    <!-- tab -->
+    <attr name="tl_tab_padding"/>
+    <attr name="tl_tab_space_equal"/>
+    <attr name="tl_tab_width"/>
+
+    <!-- title -->
+    <attr name="tl_textsize"/>
+    <attr name="tl_textSelectColor"/>
+    <attr name="tl_textUnselectColor"/>
+    <attr name="tl_textBold"/>
+    <attr name="tl_textAllCaps"/>
+
+    <!-- subtitle -->
+    <attr name="tl_subtextsize" />
+    <attr name="tl_subtextSelectColor" />
+    <attr name="tl_subtextUnselectColor" />
+    <attr name="tl_subtextBold" />
+    <attr name="tl_subtextAllCaps" />
+
+    <!-- icon -->
+    <!-- 设置icon宽度 -->
+    <attr name="tl_iconWidth" format="dimension"/>
+    <!-- 设置icon高度 -->
+    <attr name="tl_iconHeight" format="dimension"/>
+    <!-- 设置icon是否可见 -->
+    <attr name="tl_iconVisible" format="boolean"/>
+    <!-- 设置icon显示位置,对应Gravity中常量值 -->
+    <attr name="tl_iconGravity" format="enum">
+      <enum name="LEFT" value="3"/>
+      <enum name="TOP" value="48"/>
+      <enum name="RIGHT" value="5"/>
+      <enum name="BOTTOM" value="80"/>
+    </attr>
+    <!-- 设置icon与文字间距 -->
+    <attr name="tl_iconMargin" format="dimension"/>
+
+  </declare-styleable>
+
+  <declare-styleable name="SegmentTabLayout">
+    <!-- indicator -->
+    <attr name="tl_indicator_color"/>
+    <attr name="tl_indicator_height"/>
+    <attr name="tl_indicator_margin_left"/>
+    <attr name="tl_indicator_margin_top"/>
+    <attr name="tl_indicator_margin_right"/>
+    <attr name="tl_indicator_margin_bottom"/>
+    <attr name="tl_indicator_corner_radius"/>
+    <attr name="tl_indicator_anim_enable"/>
+    <attr name="tl_indicator_anim_duration"/>
+    <attr name="tl_indicator_bounce_enable"/>
+
+    <!-- divider -->
+    <attr name="tl_divider_color"/>
+    <attr name="tl_divider_width"/>
+    <attr name="tl_divider_padding"/>
+
+    <!-- tab -->
+    <attr name="tl_tab_padding"/>
+    <attr name="tl_tab_space_equal"/>
+    <attr name="tl_tab_width"/>
+
+    <!-- title -->
+    <attr name="tl_textsize"/>
+    <attr name="tl_textSelectColor"/>
+    <attr name="tl_textUnselectColor"/>
+    <attr name="tl_textBold"/>
+    <attr name="tl_textAllCaps"/>
+
+    <attr name="tl_bar_color" format="color"/>
+    <attr name="tl_bar_stroke_color" format="color"/>
+    <attr name="tl_bar_stroke_width" format="dimension"/>
+
+  </declare-styleable>
+
+  <declare-styleable name="MsgView">
+    <!-- 圆角矩形背景色 -->
+    <attr name="mv_backgroundColor" format="color"/>
+    <!-- 圆角弧度,单位dp-->
+    <attr name="mv_cornerRadius" format="dimension"/>
+    <!-- 圆角弧度,单位dp-->
+    <attr name="mv_strokeWidth" format="dimension"/>
+    <!-- 圆角边框颜色-->
+    <attr name="mv_strokeColor" format="color"/>
+    <!-- 圆角弧度是高度一半-->
+    <attr name="mv_isRadiusHalfHeight" format="boolean"/>
+    <!-- 圆角矩形宽高相等,取较宽高中大值-->
+    <attr name="mv_isWidthHeightEqual" format="boolean"/>
+  </declare-styleable>
+  <declare-styleable name="RoundProgressBar">
+    <attr name="round_color" format="color" />
+    <attr name="round_progressColor" format="color" />
+    <attr name="round_width" format="dimension"></attr>
+    <attr name="round_textColor" format="color" />
+    <attr name="round_textsize" format="dimension" />
+    <attr name="round_max" format="integer"></attr>
+  </declare-styleable>
+
+  <declare-styleable name="SmileView">
+    <attr name="smil_radius" format="integer" />
+    <attr name="smil_line_width" format="integer" />
+    <attr name="smil_duration" format="integer" />
+  </declare-styleable>
+  <declare-styleable name="HeartViewGroup">
+    <attr name="swipe_image" format="integer" />
+    <attr name="shake" format="boolean" />
+    <attr name="refresh_rate" format="integer" />
+    <attr name="degrees_interval_min" format="integer" />
+    <attr name="degrees_interval_max" format="integer" />
+  </declare-styleable>
+</resources>

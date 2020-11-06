@@ -1,0 +1,4 @@
+include ':tabLayoutLibrary'
+include ':library'
+include ':app'
+rootProject.name='诗画浙江'

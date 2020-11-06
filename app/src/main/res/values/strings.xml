@@ -1,0 +1,120 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">诗画浙江</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+ <string name="rate_very_slow">极慢</string>
+    <string name="rate_slow">慢</string>
+    <string name="rate_standard">标准</string>
+    <string name="rate_fast">快</string>
+    <string name="rate_very_fast">极快</string>
+
+    <string name="appbar_overscroll_behavior">com.shzj.behavior.demo1.behavior.AppBarLayoutOverScrollViewBehavior</string>
+    <string name="appbar_circleimageview_behavior">com.shzj.behavior.demo1.behavior.CircleImageInUsercBehavior</string>
+
+    <string-array name="preview_render_preference">
+        <item>FIT</item>
+        <item>CROP</item>
+    </string-array>
+
+    <string-array name="preview_render_value_preference">
+        <item>"FIT"</item>
+        <item>"CROP"</item>
+    </string-array>
+
+    <string-array name="preview_resolution">
+        <item>1080P</item>
+        <item>720P</item>
+    </string-array>
+
+    <string-array name="record_resolution">
+        <item>1080P</item>
+        <item>720P</item>
+        <item>540P</item>
+        <item>480P</item>
+        <item>360P</item>
+    </string-array>
+
+    <string-array name="frame_rate">
+        <item>30</item>
+        <item>25</item>
+        <item>24</item>
+        <item>20</item>
+        <item>15</item>
+    </string-array>
+
+    <string-array name="channels">
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="sample_rate">
+        <item>48000</item>
+        <item>44100</item>
+        <item>22050</item>
+    </string-array>
+
+    <string name="filter">滤镜</string>
+    <string name="music">音乐</string>
+    <string name="gif">动图</string>
+    <string name="subtitle">字幕</string>
+    <string name="mv">MV</string>
+    <string name="sound">音效</string>
+    <string name="effect">特效</string>
+    <string name="speed_time">变速</string>
+    <string name="transition">转场</string>
+    <string name="paint">涂鸦</string>
+    <string name="cover">封面</string>
+    <string name="smoother">磨皮</string>
+    <string name="effect_tip">选择位置后, 按住使用效果</string>
+    <string name="undo">撤消</string>
+    <string name="split_screen">分屏</string>
+    <string name="dream">梦幻</string>
+    <string name="dynamic">动感</string>
+
+    <string name="caption_effect_font_category_name">纯文字</string>
+    <string name="caption_effect_bottom_keyboard">键盘</string>
+    <string name="caption_effect_bottom_color">颜色</string>
+    <string name="caption_effect_bottom_font">字体</string>
+    <string name="caption_effect_bottom_animation">特效</string>
+    <string name="text_count_outof">字数超出限制</string>
+    <string name="subtitle_text_color">填充</string>
+    <string name="subtitle_text_stroke">描边</string>
+
+    <!-- 点赞选中 -->
+    <string name="icon_like_fill">&#xe60d;</string>
+    <!--评论-->
+    <string name="icon_comment">&#xe621;</string>
+    <!-- 微博 -->
+    <string name="icon_weibo">&#xe620;</string>
+    <!-- 微信 -->
+    <string name="icon_wechat">&#xe61d;</string>
+    <!-- 微信朋友圈 -->
+    <string name="icon_friends">&#xe61c;</string>
+    <!-- QQ -->
+    <string name="icon_qq">&#xe61e;</string>
+    <!-- QQ空间 -->
+    <string name="icon_qq_space">&#xe61f;</string>
+    <!-- 更多 -->
+    <string name="icon_more">&#xe61b;</string>
+    <!-- 地理位置 -->
+    <string name="icon_location_fill">&#xe624;</string>
+
+    <string name="trans">trans</string>
+
+    <string name="search_hint">热门搜索</string>
+    <string name="search_cancel">取消</string>
+    <string name="search_verify">搜索</string>
+
+    <string name="search_all">大家都在搜</string>
+    <string name="search_lately">最近搜索</string>
+
+    <string name="search_clear">清除历史</string>
+
+
+    <string name="view_pager_bottom_sheet_behavior" translatable="false" tools:ignore="ExtraTranslation">
+        com.goobird.common.application.widget.bottomsheetdialog.viewpagerofbottomsheet.ViewPagerBottomSheetBehavior</string>
+
+
+</resources>
