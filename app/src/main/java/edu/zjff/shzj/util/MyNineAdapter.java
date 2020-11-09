@@ -30,7 +30,7 @@ public class MyNineAdapter  extends NineGridViewAdapter {
     List<String> imglist=new ArrayList<>();
     @Override
     protected void onImageItemClick(Context context, NineGridView nineGridView, int index, List<ImageInfo> imageInfo) {
-
+        imglist.clear();
         //anyUtil.syso(imageInfo.toString());
         for (ImageInfo info:imageInfo) {
             /*View imageView;
