@@ -271,10 +271,9 @@ public class Activity_video extends AppCompatActivity implements VerticalComment
 
 
     protected void init() {
-        if (list==null){
-            list=new ArrayList<>();
+        if (list==null)
             getList();
-        }
+
         else
             comeformMy=true;
 
@@ -617,7 +616,8 @@ public class Activity_video extends AppCompatActivity implements VerticalComment
                         anyUtil.syso("asdasd");
                         if ("500".equals(videoRoot.getCode()))
                             comeformMy=true;//业务不对   逻辑对的    comeformMy禁用刷新
-
+                        if (list==null)
+                            list=new ArrayList<>();
                         list.addAll(videoRoot.getVideoMessages());
 
                         runOnUiThread(new Runnable() {
